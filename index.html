@@ -5,31 +5,31 @@
 	<meta name="viewport" content="width=device-width" />
 	<base target="_parent" />
 	<link rel="stylesheet" media="all" href="css/style.css"  type="text/css" />
-	<title>Open Innovations Dashboard v1.0.1</title>
-	<meta name="description" content="We keep a record of how we are doing on our public dashboard.">
+	<title>My Rotary Dashboard v 0.9</title>
+	<meta name="description" content="We keep a record of My Rotary's growth, engagement, and performance.">
 	<meta name="keywords" content="dashboard,stats,summary">
 	<script type="text/javascript" src="js/dashboard.js"></script>
 	<script>
 	var panels = {
-		"events": {
+		"unique_visitors": {
 			"start": "YYYY-MM",
 			"end": "YYYY-MM",
-			"data": ["data/events_monthly.csv"],
+			"data": ["data/uniques_monthly.csv"],
 			"els": {
-				".number": { "col": "Events", "op": "sum", "animate": true },
-				".graph": { "col": "Events", "row": "all", "type": "graph" },
+				".number": { "col": "Unique Visitors", "op": "sum", "animate": true },
+				".graph": { "col": "Unique Visitors", "row": "all", "type": "graph" },
 				".lastupdated": { "col": "YYYY-MM", "row": "last" }
 			},
 			'class':'c12-bg'
 		},
-		"reach": {
+		"page_views": {
 			"start": "YYYY-MM",
 			"end": "YYYY-MM",
-			"data": ["data/events_monthly.csv"],
+			"data": ["data/uniques_monthly.csv"],
 			"max":1000,
 			"els": {
-				".number": { "col": "People", "op": "sum", "animate": true },
-				".graph": { "col": "People", "row": "all", "type": "graph" },
+				".number": { "col": "Page Views", "op": "sum", "animate": true },
+				".graph": { "col": "Page Views", "row": "all", "type": "graph" },
 				".lastupdated": { "col": "YYYY-MM", "row": "last" }
 			},
 			'class':'c5-bg'
@@ -146,27 +146,27 @@
 	<div class="dashboard">
 		<div id="cover"></div>
 		<header class="b6-bg">
-			<h1><a href="https://open-innovations.org/"><img src="https://open-innovations.org/resources/images/logos/oi-square-black.svg" /></a> <select id="range" name="range"><option value="default">Dashboard</option><option value="lifetime">Lifetime impact</option><option value="2022">2022 impact</option><option value="2021">2021 impact</option><option value="2020">2020 impact</option><option value="2019">2019 impact</option><option value="2018">2018 impact</option><option value="2017">2017 impact</option><option value="2016">2016 impact</option><option value="2015">2015 impact</option><option value="2014">2014 impact</option></select></h1>
+			<h1><a href="https://my.rotary.org/en/"><img src="https://my.rotary.org/logo.png" /></a> <select id="range" name="range"><option value="default">Dashboard</option><option value="lifetime">Lifetime impact</option><option value="2022">2022 impact</option><option value="2021">2021 impact</option><option value="2020">2020 impact</option><option value="2019">2019 impact</option><option value="2018">2018 impact</option><option value="2017">2017 impact</option><option value="2016">2016 impact</option><option value="2015">2015 impact</option><option value="2014">2014 impact</option></select></h1>
 		</header>
 		<ul class="panels">
-			<li id="events" tabindex="0">
+			<li id="unique_visitors" tabindex="0">
 				<div class="box c12-bg">
 					<div class="panel">
-						<div class="title">Events</div>
+						<div class="title">Unique Visitors</div>
 						<div class="number less"></div>
-						<p class="more">Number of events hosted at Open Innovations</p>
+						<p class="more">My Rotary Unique Visitors</p>
 						<div class="graph more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/events_monthly.csv" class="lastupdated">events data</a></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/fioritto/dashboard/tree/gh-pages/data/uniques_monthly.csv" class="lastupdated">events data</a></div>
 					</div>
 				</div>
-			</li><li id="reach">
+			</li><li id="page_views">
 				<div class="box c5-bg">
 					<div class="panel">
-						<div class="title">Event reach</div>
+						<div class="title">Page Views</div>
 						<div class="number less"></div>
-						<p class="more">Number of people at Open Innovations events</p>
+						<p class="more">My Rotary Page Views</p>
 						<div class="graph more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/events_monthly.csv" class="lastupdated">events data by month</a></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/fioritto/dashboard/tree/gh-pages/data/uniques_monthly.csv" class="lastupdated">events data by month</a></div>
 					</div>
 				</div>
 			</li><li id="sponsors">
