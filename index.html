@@ -18,7 +18,7 @@
 			"els": {
 				".number": { "col": "Unique Visitors", "op": "sum", "animate": true },
 				".graph": { "col": "Unique Visitors", "row": "all", "type": "graph" },
-				".lastupdated": { "col": "YYYY-MM", "row": "last" }
+				".lastupdated": { "col": "Month", "row": "last" }
 			},
 			'class':'c12-bg'
 		},
@@ -29,7 +29,7 @@
 			"els": {
 				".number": { "col": "Visits", "op": "sum", "animate": true },
 				".graph": { "col": "Visits", "row": "all", "type": "graph" },
-				".lastupdated": { "col": "YYYY-MM", "row": "last" }
+				".lastupdated": { "col": "Month", "row": "last" }
 			},
 			'class':'c5-bg'
 		},
@@ -40,7 +40,7 @@
 			"els": {
 				".number": { "col": "Page Views", "op": "sum", "animate": true },
 				".graph": { "col": "Page Views", "row": "all", "type": "graph" },
-				".lastupdated": { "col": "Date start", "row": "last" }
+				".lastupdated": { "col": "Month", "row": "last" }
 			},
 			'class':'c8-bg'
 		},
@@ -48,23 +48,21 @@
 			"start": "Month",
 			"end": "Month",
 			"data": ["data/MyRotaryData.csv"],
-			"units": "&pound;",
 			"els": {
 				".number": { "col": "Pages Viewed Per Visit", "op": "sum", "animate": true },
 				".graph": { "col": "Pages Viewed Per Visit", "row": "all", "type": "graph" },
-				".lastupdated": { "col": "Date", "row": "last" }
+				".lastupdated": { "col": "Month", "row": "last" }
 			},
 			'class':'c1-bg'
 		},
-		"partners": {
-			"start": "Date start",
-			"end": "Date end",
-			"data": ["data/partners.csv"],
-			"default": "2020",
+		"prospects": {
+			"start": "Rotary Year",
+			"end": "Rotary Year",
+			"data": ["data/leads.csv"],
 			"els": {
-				".number": { "col": "img", "op": "count", "animate": true },
-				".icons": { "col": "Name", "img": "img", "url": "url", "row": "all", "type": "images" },
-				".lastupdated": { "col": "Date start", "row": "last" }
+				".number": { "col": "Prospective Member", "op": "sum", "animate": true },
+				".graph": { "col": "Prospective Member", "row": "all", "type": "graph" },
+				".lastupdated": { "col": "Rotary Year", "row": "last" }
 			},
 			'class':'c11-bg'
 		},
@@ -178,14 +176,14 @@
 						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/MyRotaryData.csv" class="lastupdated">My Rotary Data</a></div>
 					</div>
 				</div>
-			</li><li id="revenue">
+			</li><li id="prospects">
 				<div class="box c1-bg">
 					<div class="panel">
-						<div class="title">Revenue</div>
-						<p class="more">Open Innovations is a non-profit organisation. We receive no direct funding and operate using revenue from sponsorship, events and delivering projects.</p>
+						<div class="title">Prospective Members</div>
 						<div class="number less"></div>
+						<p class="more">Prospective members by Rotary Year</p>
 						<div class="graph more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/revenue.csv" class="lastupdated data">revenue table</a></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/leads.csv" class="lastupdated data">Prospective Members</a></div>
 					</div>
 				</div>
 			</li><!--<li id="partners">
