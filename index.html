@@ -6,15 +6,15 @@
 	<base target="_parent" />
 	<link rel="stylesheet" media="all" href="css/style.css"  type="text/css" />
 	<title>My Rotary Dashboard v 0.9</title>
-	<meta name="description" content="We keep a record of My Rotary's growth, engagement, and performance.">
-	<meta name="keywords" content="dashboard,stats,summary">
+	<meta name="description" content="Dashboard of My Rotary's growth, engagement, and performance.">
+	<meta name="keywords" content="dashboard,stats,summary, my rotary">
 	<script type="text/javascript" src="js/dashboard.js"></script>
 	<script>
 	var panels = {
 		"unique_visitors": {
 			"start": "YYYY-MM",
 			"end": "YYYY-MM",
-			"data": ["data/uniques_monthly.csv"],
+			"data": ["data/MyRotaryData.csv"],
 			"els": {
 				".number": { "col": "Unique Visitors", "op": "sum", "animate": true },
 				".graph": { "col": "Unique Visitors", "row": "all", "type": "graph" },
@@ -22,36 +22,36 @@
 			},
 			'class':'c12-bg'
 		},
-		"page_views": {
+		"average_visits": {
 			"start": "YYYY-MM",
 			"end": "YYYY-MM",
-			"data": ["data/uniques_monthly.csv"],
+			"data": ["data/MyRotaryData.csv"],
 			"els": {
-				".number": { "col": "Page Views", "op": "sum", "animate": true },
-				".graph": { "col": "Page Views", "row": "all", "type": "graph" },
+				".number": { "col": "Average Visits Per Month", "op": "sum", "animate": true },
+				".graph": { "col": "Average Visits Per Month", "row": "all", "type": "graph" },
 				".lastupdated": { "col": "YYYY-MM", "row": "last" }
 			},
 			'class':'c5-bg'
 		},
-		"sponsors": {
+		"page_views": {
 			"start": "Date start",
 			"end": "Date end",
-			"data": ["data/sponsors.csv"],
+			"data": ["data/MyRotaryData.csv"],
 			"els": {
-				".number": { "col": "Index", "op": "count", "animate": true },
-				".icons": { "col": "Sponsor", "img": "logo", "url": "url", "row": "all", "type": "images" },
+				".number": { "col": "Page Views", "op": "sum", "animate": true },
+				".graph": { "col": "Page Views", "row": "all", "type": "graph" },
 				".lastupdated": { "col": "Date start", "row": "last" }
 			},
 			'class':'c8-bg'
 		},
-		"revenue": {
+		"pages_viewed": {
 			"start": "Date",
 			"end": "Date",
-			"data": ["data/revenue.csv"],
+			"data": ["data/MyRotaryData.csv"],
 			"units": "&pound;",
 			"els": {
-				".number": { "col": "Amount (GBP)", "op": "sum", "animate": true },
-				".graph": { "col": "Amount (GBP)", "row": "all", "type": "graph" },
+				".number": { "col": "Pages Viewed Per Visit", "op": "sum", "animate": true },
+				".graph": { "col": "Pages Viewed Per Visit", "row": "all", "type": "graph" },
 				".lastupdated": { "col": "Date", "row": "last" }
 			},
 			'class':'c1-bg'
@@ -145,37 +145,37 @@
 	<div class="dashboard">
 		<div id="cover"></div>
 		<header class="b6-bg">
-			<h1><a href="https://my.rotary.org/en/"><img src="https://www.rotary.org/sites/all/themes/rotary_rotaryorg/images/rotary-logo-color-2019-simplified.svg" /></a> <select id="range" name="range"><option value="default">Dashboard</option><option value="lifetime">Lifetime impact</option><option value="2022">2022 impact</option><option value="2021">2021 impact</option><option value="2020">2020 impact</option><option value="2019">2019 impact</option><option value="2018">2018 impact</option><option value="2017">2017 impact</option><option value="2016">2016 impact</option><option value="2015">2015 impact</option><option value="2014">2014 impact</option></select></h1>
+			<h1><a href="https://my.rotary.org/en/"><img src="https://www.rotary.org/sites/all/themes/rotary_rotaryorg/images/rotary-logo-color-2019-simplified.svg" /></a> <select id="range" name="range"><option value="default">Dashboard</option><option value="lifetime">Lifetime impact</option><option value="2022">2022 impact</option><option value="2021">2021 impact</option><option value="2020">2020 impact</option></select></h1>
 		</header>
 		<ul class="panels">
 			<li id="unique_visitors" tabindex="0">
 				<div class="box c12-bg">
 					<div class="panel">
-						<div class="title">Unique Visitors</div>
+						<div class="title">My Rotary Unique Visitors</div>
 						<div class="number less"></div>
 						<p class="more">My Rotary Unique Visitors</p>
 						<div class="graph more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/fioritto/dashboard/tree/gh-pages/data/uniques_monthly.csv" class="lastupdated">events data</a></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/MyRotaryData.csv" class="lastupdated">events data</a></div>
+					</div>
+				</div>
+			</li><li id="average_visits">
+				<div class="box c5-bg">
+					<div class="panel">
+						<div class="title">My Rotary Average Visits</div>
+						<div class="number less"></div>
+						<p class="more">My Rotary Average Visits</p>
+						<div class="graph more"></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/MyRotaryData.csv" class="lastupdated">events data by month</a></div>
 					</div>
 				</div>
 			</li><li id="page_views">
-				<div class="box c5-bg">
+				<div class="box c8-bg">
 					<div class="panel">
 						<div class="title">Page Views</div>
 						<div class="number less"></div>
 						<p class="more">My Rotary Page Views</p>
 						<div class="graph more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/fioritto/dashboard/tree/gh-pages/data/uniques_monthly.csv" class="lastupdated">events data by month</a></div>
-					</div>
-				</div>
-			</li><li id="sponsors">
-				<div class="box c8-bg">
-					<div class="panel sponsors">
-						<div class="title">Sponsors</div>
-						<p class="more">Thank you to the people who make it happen. Become a sponsor.</p>
-						<div class="number less"></div>
-						<div class="icons more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/sponsors.csv" class="lastupdated">table of sponsors</a></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/MyRotaryData.csv" class="lastupdated">table of sponsors</a></div>
 					</div>
 				</div>
 			</li><li id="revenue">
