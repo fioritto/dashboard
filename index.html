@@ -66,40 +66,47 @@
 			},
 			'class':'c14-bg'
 		},
-		"projects": {
-			"start": "Date start",
-			"end": "Date end",
-			"max": 12,
-			"data": ["data/projects.csv"],
+		"manage": {
+			"start": "Month",
+			"end": "Month",
+			"data": ["data/MyRotaryData.csv"],
 			"els": {
-				".number": { "col": "Date start", "op": "count", "animate": true },
-				".list": { "col": "Projects", "url": "url", "row": "all", "type": "list" },
-				".lastupdated": { "col": "Date start", "row": "last" }
+				".number": { "col": "Manage", "op": "sum", "animate": true },
+				".graph": { "col": "Manage", "row": "all", "type": "graph" },
+				".lastupdated": { "col": "Month", "row": "last" }
+			},
+			'class':'c11-bg'
+		},
+		"rcc": {
+			"start": "Month",
+			"end": "Month",
+			"data": ["data/MyRotaryData.csv"],
+			"els": {
+				".number": { "col": "RCC", "op": "sum", "animate": true },
+				".graph": { "col": "RCC", "row": "all", "type": "graph" },
+				".lastupdated": { "col": "Month", "row": "last" }
 			},
 			'class':'c13-bg'
 		},
-		"themes": {
-			"start": "Date start",
-			"end": "Date end",
-			"max": 12,
-			"data": ["data/themes.csv"],
+				"showcase": {
+			"start": "Month",
+			"end": "Month",
+			"data": ["data/MyRotaryData.csv"],
 			"els": {
-				".number": { "col": "Date start", "op": "count", "animate": true },
-				".list": { "col": "Theme", "url": "url", "row": "all", "type": "list" },
-				".lastupdated": { "col": "Date start", "row": "last" }
+				".number": { "col": "Showcase", "op": "sum", "animate": true },
+				".graph": { "col": "Showcase", "row": "all", "type": "graph" },
+				".lastupdated": { "col": "Month", "row": "last" }
 			},
 			'class':'c3-bg'
 		},
-		"web": {
-			"start": "Date",
-			"end": "Date",
-			"data": ["data/web-open-innovations.org.csv"],
-			"sort": true,
-			"max":62000,
+		"grants": {
+			"start": "Month",
+			"end": "Month",
+			"data": ["data/MyRotaryData.csv"],
 			"els": {
-				".number": { "col": "Visits", "op": "sum", "animate": true },
-				".graph": { "col": "Visits", "row": "all", "type": "graph" },
-				".lastupdated": { "col": "Date", "row": "last" }
+				".number": { "col": "Grants Center", "op": "sum", "animate": true },
+				".graph": { "col": "Grants Center", "row": "all", "type": "graph" },
+				".lastupdated": { "col": "Month", "row": "last" }
 			},
 			'class':'c7-bg'
 		}
@@ -174,36 +181,50 @@
 				</div>
 			</li>
 			</li>
-			<li id="projects">
+			<li id="manage">
+				<div class="box c11-bg">
+					<div class="panel">
+						<div class="title">Manage (CDA) Unique Visitors</div>
+						<div class="number less"></div>
+						<p class="more">Manage Club & Distric Admin Unique Visitors</p>
+						<div class="graph more"></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/MyRotaryData.csv" class="lastupdated data">Manage CDA</a></div>
+					</div>
+				</div>
+			</li>
+			 <li id="rcc">
 				<div class="box c13-bg">
-					<div class="panel projects">
-						<div class="title">Open innovation <br class="less" />&amp; data projects</div>
-						<p class="more">A selection of projects we've worked on using open data</p>
+					<div class="panel">
+						<div class="title">RCC Unique Visitors</div>
 						<div class="number less"></div>
-						<div class="list more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/projects.csv" class="lastupdated">a list of our projects</a></div>
+						<p class="more">Rotary Club Central Unique Visitors</p>
+						<div class="graph more"></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/MyRotaryData.csv" class="lastupdated data">RCC</a></div>
 					</div>
 				</div>
-			</li><li class="empty" id="themes">
+			</li>
+			<li id="showcase">
 				<div class="box c3-bg">
-					<div class="panel themes">
-						<div class="title">Themes</div>
-						<p class="more">In response to project requirements, feedback and work with sponsors, friends and clients we have the following themes:</p>
+					<div class="panel">
+						<div class="title">Showcase Unique Visitors</div>
 						<div class="number less"></div>
-						<div class="list more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/partners.csv" class="lastupdated">data abour our clients</a></div>
+						<p class="more">Showcase Unique Visitors</p>
+						<div class="graph more"></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/MyRotaryData.csv" class="lastupdated data">Showcase</a></div>
 					</div>
 				</div>
-			</li><li id="web">
+			</li>
+			<li id="grants">
 				<div class="box c7-bg">
 					<div class="panel">
-						<div class="title">Website Visits</div>
-						<p class="more">Website visits to ODI</p>
+						<div class="title">Grants Center Unique Visitors</div>
 						<div class="number less"></div>
+						<p class="more">Grants Center Unique Visitors</p>
 						<div class="graph more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/web-open-innovations.org.csv" class="lastupdated">website visits</a></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/MyRotaryData.csv" class="lastupdated data">Grants Center</a></div>
 					</div>
 				</div>
+			</li>
 		</ul>
 	</div>
 	<script src="https://open-innovations.org/resources/oi.log.js"></script>
