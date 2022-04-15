@@ -55,31 +55,14 @@
 			},
 			'class':'c1-bg'
 		},
-		"blog": {
-			"start": "Date",
-			"end": "Date",
-			"max": 12,
-			"data": ["data/blog.csv"],
+		"signins": {
+			"start": "Month",
+			"end": "Month",
+			"data": ["data/MyRotaryData.csv"],
 			"els": {
-				".number": { "col": "Date", "op": "count", "animate": true },
-				".list": { "col": "Title", "url": "URL", "row": "all", "type": "list", "colour": "Class", "val": function(v){
-					return v['Title']+'<br />'+v['Date'].substr(0,10);
-				}},
-				".lastupdated": { "col": "Date", "row": "last", "val": function(v){ return v['Date'].substr(0,10); } }
-			},
-			'class':'c11-bg'
-		},
-		"downloads": {
-			"start": "Downloads",
-			"end": "Downloads",
-			"max": 12,
-			"data": ["data/downloads.csv"],
-			"els": {
-				".number": { "col": "Downloads", "op": "sum", "animate": true },
-				".list": { "col": "Title", "row": "all", "type": "list", "colour": "Class", "val": function(v){
-					return v['Title']+'<br />'+v['Downloads'].substr(0,10);
-				}},
-				".lastupdated": { "col": "Downloads", "row": "last", "val": function(v){ return v['Downloads'].substr(0,10); } }
+				".number": { "col": "Month", "op": "count", "animate": true },
+				".list": { "col": "My Rotary Sign Ins", "url": "url", "row": "all", "type": "list" },
+				".lastupdated": { "col": "Month", "row": "last" }
 			},
 			'class':'c14-bg'
 		},
@@ -179,27 +162,17 @@
 					</div>
 				</div>
 			</li>
-			<li class="empty" id="blog">
-				<div class="box c11-bg">
-					<div class="panel blog">
-						<div class="title">Blog posts</div>
-						<p class="more">We publish all of our work openly on the web take a look here:</p>
+			<li id="signins">
+				<div class="box c14-bg">
+					<div class="panel">
+						<div class="title">My Rotary Sign Ins</div>
 						<div class="number less"></div>
-						<div class="list more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/partners.csv" class="lastupdated">data abour our clients</a></div>
+						<p class="more">My Rotary Sign Ins</p>
+						<div class="graph more"></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/leads.csv" class="lastupdated data">My Rotary Sign Ins</a></div>
 					</div>
 				</div>
 			</li>
-			<li class="empty" id="downloads">
-				<div class="box c14-bg">
-					<div class="panel blog">
-						<div class="title">Top Downloads</div>
-						<p class="more">Most popular files downloaded from My Rotary.</p>
-						<div class="number less"></div>
-						<div class="list more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/downloads.csv" class="lastupdated">most popular downloaded files</a></div>
-					</div>
-				</div>
 			</li>
 			<li id="projects">
 				<div class="box c13-bg">
