@@ -81,7 +81,7 @@
 				}},
 				".lastupdated": { "col": "Downloads", "row": "last", "val": function(v){ return v['Downloads'].substr(0,10); } }
 			},
-			'class':'c11-bg'
+			'class':'c14-bg'
 		},
 		"projects": {
 			"start": "Date start",
@@ -93,7 +93,7 @@
 				".list": { "col": "Projects", "url": "url", "row": "all", "type": "list" },
 				".lastupdated": { "col": "Date start", "row": "last" }
 			},
-			'class':'c14-bg'
+			'class':'c13-bg'
 		},
 		"themes": {
 			"start": "Date start",
@@ -105,32 +105,7 @@
 				".list": { "col": "Theme", "url": "url", "row": "all", "type": "list" },
 				".lastupdated": { "col": "Date start", "row": "last" }
 			},
-			'class':'c13-bg'
-		},
-		"blog": {
-			"start": "Date",
-			"end": "Date",
-			"max": 12,
-			"data": ["data/blog.csv"],
-			"els": {
-				".number": { "col": "Date", "op": "count", "animate": true },
-				".list": { "col": "Title", "url": "URL", "row": "all", "type": "list", "colour": "Class", "val": function(v){
-					return v['Title']+'<br />'+v['Date'].substr(0,10);
-				}},
-				".lastupdated": { "col": "Date", "row": "last", "val": function(v){ return v['Date'].substr(0,10); } }
-			},
-			'class':'c11-bg'
-		},
-		"tweet": {
-			"start": "Date",
-			"end": "Date",
-			"data": ["data/socials.csv"],
-			"els": {
-				".number": { "col": "Tweet Impressions", "op": "sum", "animate": true },
-				".graph": { "col": "Tweet Impressions", "row": "all", "type": "graph" },
-				".lastupdated": { "col": "Date", "row": "last" }
-			},
-			"class":"c3-bg"
+			'class':'c3-bg'
 		},
 		"web": {
 			"start": "Date",
@@ -203,19 +178,20 @@
 						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/leads.csv" class="lastupdated data">Prospective Members</a></div>
 					</div>
 				</div>
-			</li><!--<li id="partners">
+			</li>
+			<li class="empty" id="blog">
 				<div class="box c11-bg">
-					<div class="panel partners">
-						<div class="title">Friends and Partners</div>
-						<p class="more">Organisations and individuals we share our workspace with or collaborate with to deliver projects.</p>
+					<div class="panel blog">
+						<div class="title">Blog posts</div>
+						<p class="more">We publish all of our work openly on the web take a look here:</p>
 						<div class="number less"></div>
-						<div class="icons more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/partners.csv" class="lastupdated data">data about our partners</a></div>
+						<div class="list more"></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/partners.csv" class="lastupdated">data abour our clients</a></div>
 					</div>
 				</div>
-			</li>-->
+			</li>
 			<li class="empty" id="downloads">
-				<div class="box c11-bg">
+				<div class="box c14-bg">
 					<div class="panel blog">
 						<div class="title">Top Downloads</div>
 						<p class="more">Most popular files downloaded from My Rotary.</p>
@@ -224,8 +200,9 @@
 						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/downloads.csv" class="lastupdated">most popular downloaded files</a></div>
 					</div>
 				</div>
-			</li><li id="projects">
-				<div class="box c14-bg">
+			</li>
+			<li id="projects">
+				<div class="box c13-bg">
 					<div class="panel projects">
 						<div class="title">Open innovation <br class="less" />&amp; data projects</div>
 						<p class="more">A selection of projects we've worked on using open data</p>
@@ -235,7 +212,7 @@
 					</div>
 				</div>
 			</li><li class="empty" id="themes">
-				<div class="box c13-bg">
+				<div class="box c3-bg">
 					<div class="panel themes">
 						<div class="title">Themes</div>
 						<p class="more">In response to project requirements, feedback and work with sponsors, friends and clients we have the following themes:</p>
@@ -244,34 +221,16 @@
 						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/partners.csv" class="lastupdated">data abour our clients</a></div>
 					</div>
 				</div>
-			</li><li id="tweet">
-				<div class="box c3-bg">
-					<div class="panel">
-						<div class="title">Tweet impressions</div>
-						<p class="more">Interaction with the <a href="https://twitter.com/ODILeeds">@ODILeeds</a> Twitter account. Source: Twitter Analytics</p>
-						<div class="number less"></div>
-						<div class="graph more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/socials.csv" class="lastupdated">twitter stats</a></div>
-					</div>
-				</div>
 			</li><li id="web">
 				<div class="box c7-bg">
 					<div class="panel">
-						<div class="title">Website visits</div>
-						<p class="more">Visits to <a href="https://open-innovations.org">open-innovations.org</a>. Source: Open Innovations weblogs</p>
+						<div class="title">Website Visits</div>
+						<p class="more">Website visits to ODI</p>
 						<div class="number less"></div>
 						<div class="graph more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/web-open-innovations.org.csv" class="lastupdated">web log stats</a></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/web-open-innovations.org.csv" class="lastupdated">website visits</a></div>
 					</div>
 				</div>
-			</li
-			><!--<li>
-				<div class="box c7-bg">
-					<div class="panel" style="background: url('http://i2.wp.com/leeds.odinodes.wpengine.com/wp-content/uploads/sites/7/2015/07/Yorkshire-Water-Data-Dive-event-at-Munro-House-Leeds..-001.jpg?resize=420%2C240') center center;background: url('bg.jpg') center center;background-size: cover;">
-						<div class="image"></div>
-					</div>
-				</div>
-			</li>-->
 		</ul>
 	</div>
 	<script src="https://open-innovations.org/resources/oi.log.js"></script>
