@@ -55,14 +55,17 @@
 			},
 			'class':'c1-bg'
 		},
-		"prospects": {
-			"start": "Rotary Year",
-			"end": "Rotary Year",
-			"data": ["data/leads.csv"],
+		"downloads": {
+			"start": "Downloads",
+			"end": "Downloads",
+			"max": 12,
+			"data": ["data/downloads.csv"],
 			"els": {
-				".number": { "col": "Prospective Member", "op": "sum", "animate": true },
-				".graph": { "col": "Prospective Member", "row": "all", "type": "graph" },
-				".lastupdated": { "col": "Rotary Year", "row": "last" }
+				".number": { "col": "Downloads", "op": "sum", "animate": true },
+				".list": { "col": "Title", "row": "all", "type": "list", "colour": "Class", "val": function(v){
+					return v['Title']+'<br />'+v['Downloads'].substr(0,10);
+				}},
+				".lastupdated": { "col": "Downloads", "row": "last", "val": function(v){ return v['Date'].substr(0,10); } }
 			},
 			'class':'c11-bg'
 		},
@@ -196,14 +199,14 @@
 						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/partners.csv" class="lastupdated data">data about our partners</a></div>
 					</div>
 				</div>
-			</li>--><li class="empty" id="blog">
+			</li>--><li class="empty" id="downloads">
 				<div class="box c11-bg">
 					<div class="panel blog">
-						<div class="title">Blog posts</div>
-						<p class="more">We publish all of our work openly on the web take a look here:</p>
+						<div class="title">Top Downloads</div>
+						<p class="more">Most popular files downloaded from My Rotary.</p>
 						<div class="number less"></div>
 						<div class="list more"></div>
-						<div class="updated"><span class="updatelabel">Last updated: </span><a href="https://github.com/odileeds/dashboard/tree/gh-pages/data/partners.csv" class="lastupdated">data abour our clients</a></div>
+						<div class="updated"><span class="updatelabel">Last updated: </span><a href="data/downloads.csv" class="lastupdated">most popular downloaded files</a></div>
 					</div>
 				</div>
 			</li><li id="projects">
